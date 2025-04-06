@@ -1,0 +1,26 @@
+void moveForward() {
+    switch (robot.dir) {
+        case 'N': if (robot.y < MAZE_SIZE - 1) robot.y++; break;
+        case 'E': if (robot.x < MAZE_SIZE - 1) robot.x++; break;
+        case 'S': if (robot.y > 0) robot.y--; break;
+        case 'W': if (robot.x > 0) robot.x--; break;
+    }
+}
+
+void turnLeft() {
+    switch (robot.dir) {
+        case 'N': robot.dir = 'W'; break;
+        case 'W': robot.dir = 'S'; break;
+        case 'S': robot.dir = 'E'; break;
+        case 'E': robot.dir = 'N'; break;
+    }
+}
+
+void turnRight() {
+    switch (robot.dir) {
+        case 'N': robot.dir = 'E'; break;
+        case 'E': robot.dir = 'S'; break;
+        case 'S': robot.dir = 'W'; break;
+        case 'W': robot.dir = 'N'; break;
+    }
+}
